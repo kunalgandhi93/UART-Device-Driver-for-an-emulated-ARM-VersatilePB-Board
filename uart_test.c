@@ -12,15 +12,15 @@ int main()
   	setvbuf(MEM,&dummy,_IONBF,1);
 	
 	byte_read = (char*) malloc (5);
-	/* Reading from memory driver */
+	/* Reading from driver */
 	
 	printf("Enter a character\n");
 	scanf("%c", &dummy);
 	
-	/* Opening the memory driver */
+	/* Opening the driver */
  	MEM=fopen("/dev/uart-driver","wb");
 	
-	/* Writing to the memory driver */
+	/* Writing to the driver */
   	printf("Byte value written is %s\n",dummy);
   	fwrite(dummy,1,5,MEM);
 	fclose (MEM);
